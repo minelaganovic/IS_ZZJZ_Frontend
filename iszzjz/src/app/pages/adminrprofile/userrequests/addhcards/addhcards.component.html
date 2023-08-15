@@ -1,0 +1,15 @@
+<form>
+    <div class="mb-3">
+      <label for="datex" class="form-label"> Datum overe knjizice: </label>
+      <input type="date" [(ngModel)]="date_verification_hc" id="date_verification_hc" class="form-control" name="date_verification_hc">
+    </div>
+    <div class="mb-3">
+        <label for="datever" class="form-label">Datum isteka knjizice:</label>
+        <input type="date" class="form-control" [(ngModel)]="date_expiration_hc"  name="date_expiration_hc">
+    </div>
+    <input type="text" name="userid" [(ngModel)]="id_user" id="userid" hidden>
+
+    <button (click)="addNCards()" class="btn btn-primary">
+      Izdaj novu zdravstvenu knjizicu
+    </button>
+</form>

@@ -1,0 +1,21 @@
+<div>
+    <input type="text" name="userid" [(ngModel)]="user_id" id="userid" hidden>
+    <div *ngFor="let cd of healthcards$|async" class="mb-3">
+    <div *ngIf="cd.user_id==user_id">
+      <label for="datex" class="form-label"> Datum isteka knjizice: </label>
+      <p>{{cd.date_verification_hc}}</p>
+    <div class="mb-3">
+        <label for="datever" class="form-label">Datum overe knjizice:</label>
+        <input type="date" class="form-control" [(ngModel)]="date_verification_hc" name="date_verification_hc">
+    </div>
+    <div class="mb-3">
+        <label for="datever" class="form-label">Datum sledece overe knjizice:</label>
+        <input type="date" class="form-control" [(ngModel)]="date_expiration_hc" name="date_expiration_hc">
+    </div>
+    <button (click)="overiHCards(cd.id)" class="btn btn-primary">
+      Overi zdravstvenu knjizicu
+    </button>
+</div>
+</div>
+</div>
+   

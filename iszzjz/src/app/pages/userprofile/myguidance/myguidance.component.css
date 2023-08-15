@@ -1,0 +1,20 @@
+h5{
+    font-size:larger;
+}
+p{
+    font-size:15px;
+}
+.card{
+    width: 40rem;
+}
+@media (max-width: 767px) {
+   h5{
+    font-size: small;
+   }
+   p{
+    font-size: 9px;
+   }
+   .card{
+    width: 20rem;
+}
+  }

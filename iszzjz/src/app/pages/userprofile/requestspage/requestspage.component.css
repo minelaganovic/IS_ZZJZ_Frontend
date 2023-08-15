@@ -1,0 +1,14 @@
+select{
+    width: 300px;
+}
+@media (max-width: 767px) {
+    .select {
+        width:100px;
+    }
+    .option{
+        width:100px;
+    }
+    h5{
+        font-size: 15px;
+    }
+  }

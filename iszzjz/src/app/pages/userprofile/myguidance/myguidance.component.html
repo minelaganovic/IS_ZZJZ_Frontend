@@ -1,0 +1,41 @@
+<ng-container  *ngIf="uputinfo==null">
+    <div class="card text-center"  style="border: 2px solid black;" >
+        <div class="card-header">
+          Informacije o vašim uputima i putnim troskovima
+        </div>
+        <div class="card-body" style="background-color: rgba(101, 187, 248, 0.785); color: white;">
+          <h5 class="card-title">  NEMATE NIJEDAN OVEREN UPUT JOŠ UVEK  </h5>
+      </div>
+      </div>
+  </ng-container>
+  <ng-container  *ngFor="let uputinfo of uputinfo">
+    <div class="card border-primary mb-3" style="position: center;">
+        <div class="card-header" style="color: black; text-align: center;">
+            <h5 class="card-title">Informacije o uputima </h5>     
+        </div>
+        <div class="card-body text-dark" style="background-color: rgba(101, 187, 248, 0.785);padding-right: 100px; color: white;">
+        <br>
+          <h5 class="card-title">Status uputa:</h5>
+          <p style=" color: red;font-style:italic; text-align:right;">{{uputinfo.status}}</p>
+            <br>
+            <div *ngFor="let hce of hceList$|async">
+                <div *ngIf="hce.id_hce==uputinfo.hc_id">
+                    <h5 class="card-title" style="font-style: italic;">U zdravstvenom centru: </h5>
+                    <p class="card-text" style=" color: red;font-style: italic;text-align:right;">{{hce.name_hce}}, {{hce.flname_doctor}}</p>
+            </div>
+            </div>
+        <h5 class="card-title"> Šifra bolesti :  </h5>
+          <p class="card-text" style=" color: red;font-style: italic;text-align:right;">{{uputinfo.disease_code}}</p>
+        <h5 class="card-title"> Terapija bolesti:  </h5>
+          <p class="card-text" style=" color: red;font-style: italic;text-align:right;"> {{uputinfo.therapy}} </p>
+        <h5 class="card-title" style="font-style: italic;">Uz overen putni trosak: </h5>
+        <div *ngFor="let te of teList$|async">
+        <div *ngIf="te.id==uputinfo.te_id">
+            <h5 class="card-title" style="font-style: italic;">Na relaciji: </h5>
+            <p class="card-text" style=" color: red;font-style: italic;text-align:right;">{{te.path}} sa cenom od {{te.cost_price}}</p>
+        </div>
+        </div>
+        <h5 class="card-title" style="font-style: italic;">Datuma: </h5>
+            <p class="card-text" style=" color: red;font-style: italic;text-align:right;">{{uputinfo.today_date}} </p>
+      </div></div>
+  </ng-container>

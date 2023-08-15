@@ -1,0 +1,18 @@
+.upload{
+    font-weight:bold;
+    color:#28a745;
+    margin-left: 15px;
+    line-height: 36px;
+  }
+  .btn{
+    width: 245px;
+  }
+  @media (max-width: 767px) {
+   .upload{
+    margin-left: 5px;
+    line-height: 16px;
+   }
+   .btn{
+    width: 100px;
+  }
+  }

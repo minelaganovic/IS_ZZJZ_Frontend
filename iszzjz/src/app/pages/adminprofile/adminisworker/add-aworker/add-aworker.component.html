@@ -1,0 +1,22 @@
+<form>
+    <div class="mb-3">
+      <label for="firstName" class="form-label">Ime: </label>
+      <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName">
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Prezime: </label>
+      <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail adresa naloga:</label>
+        <input type="text" class="form-control" [(ngModel)]="email" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="pwd" class="form-label">Sifra naloga :</label>
+        <input type="text" class="form-control" [(ngModel)]="pwd" name="pwd">
+    </div>
+
+    <button (click)="addAW()" *ngIf="aworker.id==0" class="btn btn-primary">
+      Dodaj novog administrativnog radnika
+    </button>
+  </form>

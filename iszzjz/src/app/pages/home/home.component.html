@@ -1,0 +1,48 @@
+<div class="banner">
+    <div class="content">
+        <h1  style="padding-top: 30px;text-shadow: 4px 4px #b72525;" class="mb-5">Zavod za javno zdravlje 2023</h1>
+        <a routerLink="menu">USLUGE <i class="bi bi-arrow-right"></i></a>
+    </div>
+</div>
+<!-- step  -->
+<div class="container mt-5 mb-5">
+    <h1 class="text-center">Kako do <span class="highlight">naših usluga</span></h1>
+    <div class="row mt-5">
+        <!-- one  -->
+        <div class="col-lg-4 mt-2">
+            <div class="stepBox">
+                <h1>1</h1>
+                <p>Kreirajte nalog</p>
+            </div>
+        </div>
+<!-- two -->
+        <div class="col-lg-4 mt-2">
+            <div class="stepBox">
+                <h1>2</h1>
+                <p>Logujte se na sistem</p>
+            </div>
+        </div>
+        <!-- three  -->
+        <div class="col-lg-4 mt-2">
+            <div class="stepBox">
+                <h1>3</h1>
+                <p>Priložite dokumenta i sačuvajte</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- foodbox  -->
+<div class="container mt-4 mb-4">
+    <h1 class="text-center">Naše dostupne <span class="highlight">usluge</span></h1>
+    <div class="row">
+        <div class="col-lg-3 mt-3" *ngFor="let s of servicesData;index as i">
+            <div class="fbox" *ngIf="i<=3">
+                <img src="{{s.sImg}}" />
+                <h1>{{s.sName}}</h1>
+                <p> <i class="bi bi-hourglass-split"></i>: {{s.sTime }}</p>
+            </div>
+        </div>
+    </div>
+    <a routerLink="menu" class="viewmorebtn">Opširnije <i class="bi bi-arrow-right"></i></a>
+</div>

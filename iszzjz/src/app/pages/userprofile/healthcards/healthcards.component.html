@@ -1,0 +1,21 @@
+  <div class="card text-center"  style="border: 2px solid black;" >
+      <div class="card-header" style="color: black;">
+        Informacije o vašoj zdravstevenoj knjižici
+      </div>
+      <div class="card-body" style="background-color: rgba(101, 187, 248, 0.785); color: white;">
+          <br>
+        <h5 class="card-title"> LBO :  DINELA</h5>
+        <p class="card-text" style="font-style: italic;">{{cardsinfo !== null ? cardsinfo.lbo :  "SDSA"}}</p>
+          <br>
+          <h5 class="card-title"> Datum overe vaše knjižice :  </h5>
+        <p class="card-text" style="font-style: italic;">{{cardsinfo !== null ? cardsinfo.date_verification_hc : "SDSA1"}}</p>
+          <br>
+          <h5 class="card-title"> Datum isteka vaše knjižice :  </h5>
+        <p class="card-text" style="font-style: italic;"> {{cardsinfo !== null ? cardsinfo.date_expiration_hc : "SDSA2"}} </p>
+          <br>
+      </div>
+      <div class="card-footer text-body-secondary">
+          <p class="card-text" style="font-style: italic;">Ako vam je istekla zdravstvena knjižica!  </p>
+          <a routerLink="../requestspage" class="btn btn-dark">Predaj zahtev/Overi knjižicu</a>
+      </div>
+    </div>

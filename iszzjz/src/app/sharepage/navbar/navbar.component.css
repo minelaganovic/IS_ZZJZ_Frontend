@@ -1,0 +1,33 @@
+.navbar-light .navbar-nav .nav-link
+{
+    color: var(--secondary-color);
+}
+.navbar-light .navbar-nav .nav-link.active-link
+{
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.logo{
+height: 45px;
+width: 45px;
+}
+
+.dropdown-menu li{
+    position: relative;
+}
+.dropdown-menu .submenu{
+    position: absolute;
+    display: none;
+    left: 20%;
+    top: 30px;
+}
+.dropdown-menu>li:hover>.submenu{
+    display: block;
+}
+@media (max-width: 767px) {
+    .nav-link
+{
+    text-align: center;
+}
+  }

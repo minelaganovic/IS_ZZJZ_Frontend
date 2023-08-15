@@ -1,0 +1,34 @@
+<div>
+    <div class="mb-3">
+    <label for="datever" class="form-label">Dana (danasnji datum):</label>
+    <input type="date" class="form-control" [(ngModel)]="todaytdate" name="todaytdate">
+    </div>
+    <input type="text" name="userid" [(ngModel)]="user_id" id="userid" hidden>
+    <div *ngFor="let ur of usersList$|async" class="mb-3">
+    <label for="datever" *ngIf="ur.id==user_id" class="form-label">{{ur.firstName}} {{ur.lastName}}, upucuje se na pregled radi bolesti(sifra bolesti):</label>
+    </div>
+    <input type="text" class="form-control" name="dcode" [(ngModel)]="diseasecode " id="disease_code ">
+    <div class="mb-3">
+    <label for="datever" class="form-label">i trenutne terapije: </label>
+    <input type="text" class="form-control" name="therapy" [(ngModel)]="therapy" id="therapy">
+    </div>
+    <div class="mb-3">
+        <label for="hc" class="form-label">Na lecenje u Zdravstveni ustanovi kod doktora:</label>
+        <select class="form-control" name="status" id="status" [(ngModel)]="hce">
+        <option *ngFor="let hce of hceList$|async" [ngValue]="hce.id_hce">{{hce.name_hce}}-{{hce.flname_doctor}}</option>
+        </select>
+    </div>
+    <div class="mb-3">
+      <label for="datex" class="form-label"> Nacin prevoza: </label>
+      <input type="text" class="form-control" [(ngModel)]="typetran" name="typetransport">
+    </div>
+    <div class="mb-3">
+        <label for="te" class="form-label">Putne relacije i cena:</label>
+        <select class="form-control" name="patth" id="patth" [(ngModel)]="texpenses">
+        <option *ngFor="let te of texpensesList$|async" [ngValue]="te.id">{{te.path}}: {{te.cost_price}} din</option>
+      </select>
+    </div>
+    <button (click)="saveUput()" class="btn btn-primary">
+      Potvrdi overu uputa i regulisi putne troskove
+    </button>
+</div>

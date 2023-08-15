@@ -1,0 +1,20 @@
+<div class="card text-center mb-3" style="margin-top: 5%; background-color: rgb(232, 229, 229);">
+    <div class="card-body">
+      <form  [formGroup]="requestForm" (ngSubmit)="onCreate()">
+      <br>
+      <h5 class="card-title">PREDAJTE ZAHTEV (POPUNITE SVA POLJA)</h5>
+      <br>
+        <p class="card-text">Dostupni zahtevi za predaju:</p>
+        <select id="select" class="select" formControlName="requesttype"  required>
+          <option [ngValue]="null" disabled>Tip vašeg zahteva</option>
+          <option  *ngFor="let rt of  rtype" [ngValue]="rt.id">{{rt.tipzahteva}}</option>
+        </select>
+        <br>
+        <app-upload (onUploadFinished)="uploadFinished($event)"></app-upload>
+        <div class="row">
+        <div class="offset-md-5 col-md-2">
+        <button type="submit" class="btn btn-dark" >POŠALJI ZAHTEV </button></div>
+        </div>
+      </form>
+    </div>
+</div>

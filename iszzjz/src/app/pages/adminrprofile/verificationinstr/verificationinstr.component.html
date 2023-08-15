@@ -1,0 +1,43 @@
+<h4><i class="bi bi-credit-card"></i> Novi zahtevi za overu uputa i putnih troskova: </h4>
+<br>
+<div class="alert alert-success" style="width: 60rem;" role="alert" id="update-success-alert">
+  Uput za lecenje je uspesno overen!
+</div>
+
+<div style="width: 60rem;" class="alert alert-success" role="alert" id="delete-success-alert">
+    Zahtev je uspesno obrisan !
+</div>
+
+<div *ngFor="let req of requests">
+  <div *ngIf="req.type_id=='3'"  class="card" style="width: 60rem; background-color: rgb(161, 189, 195); margin-bottom: 2rem;">
+    <img class="card-img-top" [src]="createImgPath(req.document)" alt="documenttt">
+    <div class="card-body">
+      <h5 class="card-title">Dokument</h5>
+      <div *ngFor="let ur of usersList$|async" style="margin-bottom: 10px;">
+      <p *ngIf="req.userid==ur.id" class="card-text">Korisnik <b> {{ur.firstName}} {{ur.lastName}} </b>, iz
+        {{ur.address}}, rođena {{ur.date}} u {{ur.place}} podnosi zahtev za overu i kreiranje uputa za lecenje.
+      </p>
+      </div>
+      <button data-bs-toggle="modal" (click)="modalChange(req)" data-bs-target="#myModal"  class="btn btn-outline-primary me-2 mb-1">Overi uput i putni trosak </button>
+      <button (click)="delete(req)" class="btn btn-outline-danger me-2 mb-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Uput za lecenje i putni trosak: </h5>
+        <button type="button" (click)="modalClose()" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="add-edit-modal-close"></button>
+      </div>
+      <div class="modal-body">
+        <app-addguidance [requests]="request"  *ngIf="activateSave"></app-addguidance>
+      </div>    
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<form>
+    <div class="mb-3">
+      <label for="namehce" class="form-label">Naziv zdravstvenog centra: </label>
+      <!--<select class="form-control" name="status" id="status" [(ngModel)]="name_hce">
+        <option *ngFor="let name_hce of hceList$|async" [value]="name_hce">{{name_hce.name_hce}}</option>
+      </select>-->
+      <input type="text" class="form-control" [(ngModel)]="name_hce" name="name_hce">
+    </div>
+    <div class="mb-3">
+      <label for="cityhce" class="form-label">Grad z.centra: </label>
+      <input type="text" class="form-control" [(ngModel)]="city_hce" name="city_hce">
+    </div>
+    <div class="mb-3">
+        <label for="comments" class="form-label">Ime i Prezime doktora:</label>
+        <input type="text" class="form-control" [(ngModel)]="flname_doctor" name="flname_doctor">
+    </div>
+
+    <button (click)="addHCEmployee()" *ngIf="hcemployee.id_hce==0" class="btn btn-primary">
+      Dodaj zdravstveni centar
+    </button>
+    <button (click)="updateHCEmployee()" *ngIf="hcemployee.id_hce!=0" class="btn btn-primary">
+      Izmeni zdravstveni centar
+    </button>
+  </form>
