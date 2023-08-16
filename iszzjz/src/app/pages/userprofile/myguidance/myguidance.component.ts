@@ -19,6 +19,9 @@ export class MyguidanceComponent {
   
 constructor(private api: ApiService, private auth: AuthService, private store:UserstoreService, private toast: NgToastService, private service:hceApiService){
 }
+hceMap:Map<number, string> = new Map()
+
+uputinfo$!:Observable<any[]>;
 ngOnInit(): void {
 
   this.store.getUserInfoFromStore()
@@ -26,11 +29,11 @@ ngOnInit(): void {
    let infU:[] =this.auth.getArrayUFromToken();
    this.userinfo= infU;
   })
-
+  this.refreshUputMap();
   this.teList$= this.api.getTEList();
   this.hceList$= this.service.getHCEList();
 
-  this.api.getUList(this.userinfo[0])
+  /*this.api.getUList(this.userinfo[0])
   .subscribe(
     {
       next:(res)=>{
@@ -40,6 +43,17 @@ ngOnInit(): void {
     error:(err)=>{
       this.toast.error({detail: "Predajte zahtev!", summary:"Nemate aktiviranu zdravstvenu knjižicu!", duration:5000})
       this.uputinfo=null
-    }})
+    }})*/
 }
+refreshUputMap() {
+  this.api.getUList(this.userinfo[0]).subscribe(data => {
+    this.uputinfo = data;
+
+    for(let i = 0; i < data.length; i++)
+    {
+      this.hceMap.set(this.userinfo[i].user_id, this.userinfo[i].therapy);
+    }
+  })
+}
+
 }
