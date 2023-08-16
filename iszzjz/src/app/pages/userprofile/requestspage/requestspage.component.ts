@@ -49,7 +49,7 @@ ngOnInit(): void {
 }
 onCreate = () => {
   this.user = {
-    userid: 1,
+    userid: this.userinfo[0],
     document: this.response.dbPath,
     type_id: this.requestForm.get('requesttype')?.value
   }

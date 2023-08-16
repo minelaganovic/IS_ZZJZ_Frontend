@@ -31,11 +31,11 @@ ngOnInit(): void {
    let infU:[] =this.auth.getArrayUFromToken();
    this.userinfo= infU;
   })
-  this.refreshUputMap();
+  //this.refreshUputMap();
   this.teList$= this.api.getTEList();
   this.hceList$= this.service.getHCEList();
 
-  /*this.api.getUList(this.userinfo[0])
+  this.api.getUList(this.userinfo[0])
   .subscribe(
     {
       next:(res)=>{
@@ -43,12 +43,12 @@ ngOnInit(): void {
       console.log(this.uputinfo)
     },
     error:(err)=>{
-      this.toast.error({detail: "Predajte zahtev!", summary:"Nemate aktiviranu zdravstvenu knjižicu!", duration:5000})
+      this.toast.error({detail: "Predajte zahtev!", summary:"Nemate nijedan uput!", duration:5000})
       this.uputinfo=null
-    }})*/
+    }})
 }
-refreshUputMap() {
-  this.api.getUList(1).subscribe(data => {
+/*refreshUputMap() {
+  this.api.getUList(this.userinfo(0)).subscribe(data => {
     this.uputinfo = data;
 
     for(let i = 0; i < data.length; i++)
@@ -56,6 +56,6 @@ refreshUputMap() {
       this.hceMap.set(this.userinfo[i].user_id, this.userinfo[i].therapy);
     }
   })
-}
+}*/
 
 }

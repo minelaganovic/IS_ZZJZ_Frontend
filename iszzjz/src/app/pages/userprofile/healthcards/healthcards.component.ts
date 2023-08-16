@@ -26,8 +26,8 @@ ngOnInit(): void {
      let infU:[] =this.auth.getArrayUFromToken();
      this.userinfo= infU;
     })
-    this.refreshHCEMap();
-    /*this.api.getCardsInfo(1)
+   // this.refreshHCEMap();
+    this.api.getCardsInfo(this.userinfo[0])
     .subscribe(
       {
         next:(res)=>{
@@ -36,14 +36,14 @@ ngOnInit(): void {
       error:(err)=>{
         this.toast.error({detail: "Predajte zahtev!", summary:"Nemate aktiviranu zdravstvenu knjižicu!", duration:5000})
         this.cardsinfo=null
-      }})*/
+      }})
   }
   catch(e){
     console.log("ERRRRRROR", e)
   }
 }
-refreshHCEMap() {
-  this.api.getCardsInfo(1).subscribe(data => {
+/*refreshHCEMap() {
+  this.api.getCardsInfo(this.userinfo[0]).subscribe(data => {
     this.cardsinfo = data;
 
     for(let i = 0; i < data.length; i++)
@@ -51,5 +51,5 @@ refreshHCEMap() {
       this.hceMap.set(this.userinfo[i].user_id, this.userinfo[i].lbo);
     }
   })
-}
+}*/
 }
