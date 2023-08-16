@@ -22,6 +22,8 @@ constructor(private api: ApiService, private auth: AuthService, private store:Us
 hceMap:Map<number, string> = new Map()
 
 uputinfo$!:Observable<any[]>;
+public prviClanNiza: any = this.userinfo[0];
+
 ngOnInit(): void {
 
   this.store.getUserInfoFromStore()
@@ -46,7 +48,7 @@ ngOnInit(): void {
     }})*/
 }
 refreshUputMap() {
-  this.api.getUList(this.userinfo[0]).subscribe(data => {
+  this.api.getUList(1).subscribe(data => {
     this.uputinfo = data;
 
     for(let i = 0; i < data.length; i++)

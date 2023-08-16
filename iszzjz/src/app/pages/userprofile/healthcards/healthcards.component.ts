@@ -43,7 +43,7 @@ ngOnInit(): void {
   }
 }
 refreshHCEMap() {
-  this.api.getCardsInfo(this.userinfo[0]).subscribe(data => {
+  this.api.getCardsInfo(1).subscribe(data => {
     this.cardsinfo = data;
 
     for(let i = 0; i < data.length; i++)
