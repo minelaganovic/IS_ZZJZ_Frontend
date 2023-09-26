@@ -1,11 +1,22 @@
 # Iszzjz
 <p>Using Angular and ASP.NET technology ,a web application has been implemented for Information System of the Institute for Public Health.</p>
-<img src="image1.jpg" alt="image">
-<img src="image2.jpg" alt="image">
-<img src="image3.jpg" alt="image">
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <img src="image1.jpg" alt="image">
+    </div>
+    <div class="col">
+      <img src="image2.jpg" alt="image">
+    </div>
+    <div class="col">
+    <img src="image3.jpg" alt="image">
+    </div>
+  </div>
+</div>
 <img src="image4.jpg" alt="image">
-<img src="image5.png" alt="image">
 <img src="logovanje.jpg" alt="image">
+<img src="image5.png" alt="image">
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 
