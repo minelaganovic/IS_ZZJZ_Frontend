@@ -4,13 +4,13 @@
 <div class="container">
   <div class="row">
     <div class="col">
-    <img src="image1.jpg" alt="image">
+    <img src="image1.jpg" width="200px" height="400px" alt="image">
     </div>
     <div class="col">
-      <img src="image2.jpg" alt="image">
+      <img src="image2.jpg" width="200px" height="400px" alt="image">
     </div>
     <div class="col">
-    <img src="image3.jpg" alt="image">
+    <img src="image3.jpg" width="200px" height="400px" alt="image">
     </div>
   </div>
 </div>
