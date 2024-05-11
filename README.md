@@ -1,6 +1,6 @@
 # Iszzjz
 <p>Using Angular and ASP.NET technology ,a web application has been implemented for Information System of the Institute for Public Health.</p>
-<p>You can find the link to the backend code at the following URL: <a href="https://github.com/minelaganovic/E_BookStore_B">Backend </a></p>
+<p>You can find the link to the backend code at the following URL: <a href="https://github.com/minelaganovic/IS_ZZJZ_Backend">Backend </a></p>
 
 <img src="img5.png" alt="image">
 <img src="image5.png" alt="image">
